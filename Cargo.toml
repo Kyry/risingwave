@@ -305,6 +305,8 @@ incremental = false
 debug = 1
 
 [patch.crates-io]
+# Patch H2 to get past MAX_MAX_FRAME_SIZE
+h2 = { git = "https://github.com/Kyry/h2", branch = "v0.3.26-patched", version="0.3.26" }
 # Patch third-party crates for deterministic simulation.
 quanta = { git = "https://github.com/madsim-rs/quanta.git", rev = "948bdc3" }
 getrandom = { git = "https://github.com/madsim-rs/getrandom.git", rev = "e79a7ae" }

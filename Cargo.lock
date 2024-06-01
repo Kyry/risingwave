@@ -5694,8 +5694,7 @@ dependencies = [
 [[package]]
 name = "h2"
 version = "0.3.26"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "81fe527a889e1532da5c525686d96d4c2e74cdd345badf8dfef9f6b39dd5f5e8"
+source = "git+https://github.com/Kyry/h2?branch=v0.3.26-patched#86c05e6808b303ae1852b5d41ad6d8c1bfd497df"
 dependencies = [
  "bytes",
  "fnv",

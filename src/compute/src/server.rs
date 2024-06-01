@@ -395,6 +395,8 @@ pub async fn compute_node_serve(
     let (shutdown_send, mut shutdown_recv) = tokio::sync::oneshot::channel::<()>();
     let join_handle = tokio::spawn(async move {
         tonic::transport::Server::builder()
+            // Allow up to 100MB payloads
+            .max_frame_size(Some(100 * 1024 * 1024))
             .initial_connection_window_size(MAX_CONNECTION_WINDOW_SIZE)
             .initial_stream_window_size(STREAM_WINDOW_SIZE)
             .http2_max_pending_accept_reset_streams(Some(
